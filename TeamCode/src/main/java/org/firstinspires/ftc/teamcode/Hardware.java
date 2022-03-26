@@ -1,13 +1,14 @@
 package org.firstinspires.ftc.teamcode;
+import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.Servo;
-import com.qualcomm.robotcore.util.ElapsedTime;
+//import com.qualcomm.robotcore.util.ElapsedTime;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 
 @Autonomous
 
-public class Hardware {
+public class Hardware extends OpMode{
 
     //Create Motors
     public DcMotor leftFront = null;
@@ -21,13 +22,18 @@ public class Hardware {
     //Additional Variables
     HardwareMap hardwareMap = null;
 
-    public ElapsedTime runtime = new ElapsedTime(2);
+    //public ElapsedTime runtime = new ElapsedTime(2);
 
     public Hardware(HardwareMap hwMap) {
         initialize(hwMap);
     }
 
     private void initialize(HardwareMap hwMap) {
+
+    }
+
+    @Override
+    public void init() {
         hardwareMap = hwMap;
 
         //Connect Motor
@@ -66,6 +72,11 @@ public class Hardware {
         rightFront.setPower(0.2);
         leftBack.setPower(0.2);
         rightBack.setPower(0.2);
+    }
+
+    @Override
+    public void loop() {
+
     }
     //public void loop()
 }
